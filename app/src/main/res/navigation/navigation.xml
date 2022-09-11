@@ -3,19 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/letterFragment">
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.f4l.challenge_ch3.ui.main.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        android:id="@+id/letterFragment"
+        android:name="com.f4l.challenge_ch3.LetterFragment"
+        android:label="fragment_letter"
+        tools:layout="@layout/fragment_letter" >
         <action
-            android:id="@+id/action_mainFragment_to_wordFragment"
+            android:id="@+id/action_letterFragment_to_wordFragment"
             app:destination="@id/wordFragment" />
     </fragment>
     <fragment
         android:id="@+id/wordFragment"
-        android:name="com.f4l.challenge_ch3.ui.main.WordFragment"
+        android:name="com.f4l.challenge_ch3.WordFragment"
         android:label="fragment_word"
-        tools:layout="@layout/fragment_word" />
+        tools:layout="@layout/fragment_word">
+        <deepLink
+            android:id="@+id/deepLink"
+            android:autoVerify="true"
+            app:uri="https://www.google.com/" />
+        <argument
+            android:name="key"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

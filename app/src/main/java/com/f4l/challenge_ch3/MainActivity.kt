@@ -2,7 +2,6 @@ package com.f4l.challenge_ch3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.f4l.challenge_ch3.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
